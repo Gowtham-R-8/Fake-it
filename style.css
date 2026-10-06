@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #5967e8, #7d4cc9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    text-align: center;
+    font-size: 45px;
+}
+
+h1 {
+    text-align: center;
+    color: #5967e8;
+    font-size: 35px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #444;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.player-input {
+    display: flex;
+    gap: 10px;
+}
+
+.player-input input {
+    flex: 1;
+}
+
+button {
+    border: none;
+    padding: 13px 20px;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #5967e8, #824bc5);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#players {
+    margin-top: 10px;
+    color: #555;
+}
+
+.start-button {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 17px;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    color: #5967e8;
+    font-weight: bold;
+}

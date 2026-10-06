@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake It</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="logo">🎭</div>
+
+        <h1>Fake It</h1>
+
+        <p class="subtitle">Can you spot the faker?</p>
+
+        <label>Add Player Name:</label>
+
+        <div class="player-input">
+            <input type="text" id="playerName" placeholder="Enter player name">
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+
+        <div id="players"></div>
+
+        <label>Number of Imposters:</label>
+
+        <input type="number" id="imposters" value="1" min="1">
+
+        <label>Starting Player:</label>
+
+        <select id="startingPlayer">
+            <option value="random">Random</option>
+            <option value="first">First Player</option>
+        </select>
+
+        <label>Number of Rounds:</label>
+
+        <input type="number" id="rounds" value="3" min="1">
+
+        <label class="switch-label">
+            Multiple Categories:
+            <input type="checkbox" id="multipleCategories">
+        </label>
+
+        <label>Category:</label>
+
+        <select id="category">
+            <option>Animals</option>
+            <option>Movies</option>
+            <option>Sports</option>
+            <option>Food</option>
+        </select>
+
+        <button class="start-button" onclick="startGame()">
+            Start Game
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
