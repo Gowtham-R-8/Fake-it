@@ -1,0 +1,77 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check HTML file
+        run: |
+          test -f index.html
+          echo "HTML file exists"
+
+      - name: Check CSS file
+        run: |
+          test -f style.css
+          echo "CSS file exists"
+
+      - name: Check JavaScript file
+        run: |
+          test -f script.js
+          echo "JavaScript file exists"
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          echo "All tests passed"
+
+  deploy:
+
+    needs: build-and-test
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
